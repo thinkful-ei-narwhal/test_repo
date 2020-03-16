@@ -1,11 +1,21 @@
 /*let myTeam = 'Max, Orkun';
 console.log(myTeam);*/
 
-function createGreeting() {
-let englStatement = "Hi, my name is Chris and I\'m 29 years old.";
+let getYearOfBirth = (age) => (2020 - age);
 
-return englStatement;
+function yearOfBirth(age){
+    if(age < 0){
+        throw new Error("Age can not be negative");
+    }
 }
 
-const greeting1 = createGreeting();
+function createGreeting(name, age) {
+const birthYear = yearOfBirth(age);
+const yob = getYearOfBirth(age);
+return `I was born in ${yob}`;
+}
+
+//const yob = yearOfBirth(26);
+
+const greeting1 = createGreeting("Max", 26);
 console.log(greeting1);
